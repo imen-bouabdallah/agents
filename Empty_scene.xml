@@ -1,0 +1,37 @@
+<mujoco model="floor">
+
+    <statistic extent="17" meansize=".05"/> <!-- to zoom in or out change the value of extent,
+    the bigger it gets the farther the point view !-->
+
+    <option timestep="0.005" solver="Newton" iterations="30" tolerance="1e-10" jacobian="sparse" cone="pyramidal"/>
+
+    <visual>
+        <rgba haze="0.15 0.25 0.35 1"/>
+        <quality shadowsize="2048"/>
+        <map stiffness="700" shadowscale="0.5" fogstart="10" fogend="15" zfar="40" haze="0.3"/>
+    </visual>
+
+    <asset>
+        <texture type="skybox" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0" width="512" height="512"/>
+
+        <texture name="texplane" type="2d" builtin="checker" rgb1=".2 .3 .4" rgb2=".1 0.15 0.2" width="512" height="512" mark="cross" markrgb=".8 .8 .8"/>
+
+        <texture name="texhammock" type="2d" builtin="checker" rgb1=".1 .5 .1" rgb2=".5 .1 .1" width="512" height="512" mark="edge" markrgb=".8 .8 .8"/>
+
+        <texture name="texgeom" type="cube" builtin="flat" mark="cross" width="127" height="1278"
+            rgb1="0.8 0.6 0.4" rgb2="0.8 0.6 0.4" markrgb="1 1 1"/>
+
+        <material name="matplane" reflectance="0.3" texture="texplane" texrepeat="1 1" texuniform="true"/>
+        <material name="mathammock" texture="texhammock"/>
+
+        <material name="matgeom" texture="texgeom" texuniform="true" rgba="0.8 0.6 .4 1"/>
+    </asset>
+
+
+    <worldbody>
+        <light directional="true" diffuse=".4 .4 .4" specular="0.1 0.1 0.1" pos="0 0 5.0" dir="0 0 -1" castshadow="false"/>
+        <light directional="true" diffuse=".6 .6 .6" specular="0.2 0.2 0.2" pos="0 0 4" dir="0 0 -1"/>
+
+        <geom name="ground" type="plane" size="0 0 0.25" pos="0 0 0" quat="1 0 0 0" material="matplane" condim="1"/>
+    </worldbody>
+</mujoco>
