@@ -59,7 +59,7 @@
     <!--the agents!-->
 
 
-    <body name="agent3" pos="2 0 0">
+    <body name="agent1" pos="2 0 0">
 
       <geom type="sphere" size="0.5" pos="0 0 0.6" material="green"/>
 
@@ -68,6 +68,28 @@
       <joint axis="1 0 0" name="ballx" pos="0 0 0" type="slide"/>
       <joint axis="0 1 0" name="bally" pos="0 0 0" type="slide"/>
       <joint axis="0 0 1" limited="false" name="rot" pos="0 0 0" type="hinge"/>
+    </body>
+
+    <body name="agent2" pos="-3 4 0">
+
+      <geom type="sphere" size="0.5" pos="0 0 0.6" material="yellow"/>
+
+      <geom name="pointarrow2" pos="0.5 0 0.8" size="0.1 0.1 0.1" type="box" material="yellow"/>
+
+      <joint axis="1 0 0" name="ballx2" pos="0 0 0" type="slide"/>
+      <joint axis="0 1 0" name="bally2" pos="0 0 0" type="slide"/>
+      <joint axis="0 0 1" limited="false" name="rot2" pos="0 0 0" type="hinge"/>
+    </body>
+
+    <body name="agent3" pos="3 2 0">
+
+      <geom type="sphere" size="0.5" pos="0 0 0.6" material="white"/>
+
+      <geom name="pointarrow3" pos="0.5 0 0.8" size="0.1 0.1 0.1" type="box" material="white"/>
+
+      <joint axis="1 0 0" name="ballx3" pos="0 0 0" type="slide"/>
+      <joint axis="0 1 0" name="bally3" pos="0 0 0" type="slide"/>
+      <joint axis="0 0 1" limited="false" name="rot3" pos="0 0 0" type="hinge"/>
     </body>
 
 			<body name="door" pos="6 0 1" >
@@ -91,7 +113,7 @@
 			</body>
 
 
-      <body name="Key" pos="6 0 1">
+      <body name="Key" pos="-4 0 1">
           <geom name="teeth" type="box" pos="0 0.5 0" size="0.02 0.3 0.08" condim="3" friction="1 0.001 0.001"></geom>
           <geom name="Pad" type="cylinder" pos="0 -0.035 0" size="0.4 0.02" euler="0 1.57 0" condim="3" friction="1 0.001 0.001"></geom>
           <joint name="key" type="hinge" axis="0 1 0" pos="0 0 0" limited="true" range="0 1.57" stiffness="0.02" damping="0.001"></joint>
