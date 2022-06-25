@@ -1,8 +1,14 @@
-
+#
+#using mujoco-py
+#
+#
+#
+#
 import math
 
 from mujoco_py import load_model_from_path, MjSim, MjViewer
 from mujoco_py.modder import TextureModder
+import mujoco_py as mp
 
 import os
 
@@ -20,8 +26,6 @@ while True:
 
 
 
-#env = gym.make('model-v0')
-#env.reset()
 
 #for i in range(1000):
 #    env.render()

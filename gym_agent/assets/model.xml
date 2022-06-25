@@ -119,4 +119,11 @@
           <joint name="key" type="hinge" axis="0 1 0" pos="0 0 0" limited="true" range="0 1.57" stiffness="0.02" damping="0.001"></joint>
       </body>
   </worldbody>
+
+  <!--we need to add a sensor to the door to open it and actuator to the balls!-->
+
+  <actuator>
+
+  </actuator>
+</mujoco>
 </mujoco>
