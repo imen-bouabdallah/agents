@@ -1,5 +1,5 @@
 #
-#using mujoco-py
+#using mujoco
 #
 #
 #

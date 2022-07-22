@@ -14,9 +14,9 @@ t=0
 while True:
     #   sim.data.ctrl[1] = math.cos(t / 10.) * 0.01
     sim.step()
-    t = time.time()
-    x, y = math.cos(t), math.sin(t)
-    viewer.add_marker(pos=np.array([x, y, 1]))
+    #t = time.time()
+    #x, y = math.cos(t), math.sin(t)
+    #viewer.add_marker(pos=np.array([x, y, 1]))
     #print(sim.data.qpos)
     viewer.render()
     if t > 100 and os.getenv('TESTING') is not None:

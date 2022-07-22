@@ -3,6 +3,7 @@ from gym import utils
 from gym import spaces
 from gym.envs.mujoco import mujoco_env
 from collections import defaultdict
+import cv2
 #from gym_agent.controller.MujocoController import MJ_Controller
 
 import os
@@ -35,6 +36,7 @@ class WorldEnv(mujoco_env.MujocoEnv, utils.EzPickle):
         done = False
 
         info = {}
+        print("step")
         return obs, reward, done, info
 
     def get_observation(self, show=True):
@@ -52,6 +54,7 @@ class WorldEnv(mujoco_env.MujocoEnv, utils.EzPickle):
         #observation["depth"] = depth
 
         return observation
+
     def reset_model(self):
         qpos = self.init_qpos
         qvel = self.init_qvel
@@ -61,5 +64,18 @@ class WorldEnv(mujoco_env.MujocoEnv, utils.EzPickle):
     def viewer_setup(self):
         pass
 
-    #def render(self):
-    #pass
+    def render(self, mode="human"):
+        """
+        Render the current simulation state to the screen or off-screen buffer.
+        Call this in your main loop.
+        """
+        assert mode in ["human", "rgb_array"], "Invalid mode, must be either \"human\" or \"rgb_array\""
+        if mode == "human":
+            cv2.imshow("Game", self.canvas)
+            cv2.waitKey(10)
+
+        elif mode == "rgb_array":
+            return self.canvas
+
+    def close(self):
+        cv2.destroyAllWindows()

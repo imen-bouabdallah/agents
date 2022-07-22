@@ -1,5 +1,8 @@
 import gym
 import gym_agent
+import warnings
+warnings.filterwarnings("ignore", category=DeprecationWarning)
+
 
 env = gym.make("model-v0")
 obs = env.reset()
